@@ -1,0 +1,20 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.hero {
+    width: 100%;
+    background-color: $dark-black;
+
+    &__video {
+        width: 100%;
+        border-radius: 5px;
+
+        @include tablet {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+        // &__scrub {
+        //     height: 10rem;
+        // }
+}
