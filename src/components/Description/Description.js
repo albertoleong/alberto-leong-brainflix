@@ -1,6 +1,7 @@
 import './Description.scss'
 import views from '../../assets/icons/views.svg'
 import likes from '../../assets/icons/likes.svg'
+import CommentSection from '../CommentSection/CommentSection'
 
 const Description = () => {
 
@@ -34,6 +35,8 @@ const Description = () => {
                     <p className='description__commentCount'>3 Comments</p>
                 </div>
             </div>
+            
+            <CommentSection />
 
         </section>
         </>
