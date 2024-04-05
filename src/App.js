@@ -7,6 +7,9 @@ function App() {
     <>
     <Header />
     <Hero />
+    <main className='main'>
+
+    </main>
     </>
   );
 }

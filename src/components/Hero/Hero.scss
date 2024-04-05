@@ -7,14 +7,30 @@
 
     &__video {
         width: 100%;
+        height: 100%;
         border-radius: 5px;
+        display: flex;
 
         @include tablet {
             padding-left: 2rem;
             padding-right: 2rem;
         }
     }
-        // &__scrub {
-        //     height: 10rem;
-        // }
+         &__scrub {
+           height: 1.25rem;
+           width: 15rem;
+           color: white;
+           background-color: gray;
+        }
+        &__play {
+            background-color: gray;
+            height: 1.25rem;
+        }
+        &__screen {
+            height: fit-content;
+        }
+        &__sound {
+            justify-self: end;
+            align-self: flex-end;
+        }
 }
