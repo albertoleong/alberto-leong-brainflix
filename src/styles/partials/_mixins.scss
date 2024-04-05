@@ -10,3 +10,9 @@
         @content;
     }
 }
+
+@mixin text {
+    font-size: 1.25rem;
+    color: $brainflix-black;
+    font-weight: 400;
+}

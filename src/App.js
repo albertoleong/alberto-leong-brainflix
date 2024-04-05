@@ -1,4 +1,5 @@
 import './App.scss';
+import Description from './components/Description/Description';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 
@@ -8,7 +9,7 @@ function App() {
     <Header />
     <Hero />
     <main className='main'>
-
+      <Description />
     </main>
     </>
   );
