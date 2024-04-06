@@ -78,6 +78,7 @@
         border: none;
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         @include tablet {
             width: 10rem;

@@ -6,6 +6,7 @@
     flex-direction: column;
     padding-top: 1.25rem;
     width: 100%;
+    //margin: 1.25rem;
 
     &__form {
         display: flex;
@@ -16,8 +17,11 @@
         &__face {
             border-radius: 50%;
             height: 3.25rem;
-            width: 3.25rem;
+            width: 3.35rem;
             object-fit: cover;
+        }
+        &__face--top {
+            margin-top: 3rem;
         }
         &__conversation {
             display: flex;
@@ -28,15 +32,26 @@
             &__heading {
                 display: flex;
                 flex-direction: column;
-                gap: 1.25rem;
+                gap: .25rem;
             }
                 &__join {
                     @include text;
+                    font-size: 1.25rem;
                     font-weight: 600;
+                    color: $silver;
                 }
                 &__box {
-                    height: 8rem;
+                    height: 10rem;
+                    background-color: $alabaster;
+                    border-radius: 5px;
+                    padding: 1rem;
+                    border: 2px solid $mercury;
+                    outline-color: $brainflix-blue;
+                    
                     @include text;
+                }
+                &__box::placeholder {
+                    color: $dark-black;
                 }
                 &__submit {
                     background-color: $brainflix-blue;
@@ -45,6 +60,7 @@
                     display: flex;
                     align-items: center;
                     border: none;
+                    cursor: pointer;
                 }
                     &__icon {
                         height: 2rem;
@@ -55,31 +71,4 @@
                         font-weight: 600;
                         width: 100%;
                     }
-
-        &__data {
-            display: flex;
-            padding-top: 1.25rem;
-            gap: 1.25rem;
-        }
-            &__info {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                gap: 1.25rem;
-            }
-                &__top {
-                    display: flex;
-                    justify-content: space-between;
-                }
-                    &__username {
-                        @include text;
-                        font-weight: 600;
-                    }
-                    &__date {
-                        @include text;
-                        color: $silver;
-                    }
-                &__textarea {
-                    @include text;
-                }
     }

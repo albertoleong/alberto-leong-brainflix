@@ -1,0 +1,39 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comment {
+    display: flex;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid $mercury;
+
+    &__face {
+        border-radius: 50%;
+        height: 3.25rem;
+        width: 3.75rem;
+        object-fit: cover;
+        background-color: $mercury;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1.25rem;
+    }
+        &__top {
+            display: flex;
+            justify-content: space-between;
+        }
+            &__username {
+                @include text;
+                font-weight: 600;
+            }
+            &__date {
+                @include text;
+                color: $silver;
+            }
+        &__textarea {
+            @include text;
+        }
+}

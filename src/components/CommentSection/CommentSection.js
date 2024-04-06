@@ -1,16 +1,21 @@
 import './CommentSection.scss'
 import face from '../../assets/images/Mohan-muruge.jpg'
 import icon from '../../assets/icons/add_comment.svg'
+import Comment from '../Comment/Comment'
 
-const CommentSection = () => {
+const CommentSection = ({commentArray}) => {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
 
     return (
         <section className='comments'>
-            <form className='comments__form'>
-                <img src={face} className='comments__face' alt='Users face' />
+            <form className='comments__form' onSubmit={handleSubmit}>
+                <img src={face} className='comments__face comments__face--top' alt='Users face' />
                 <div className='comments__conversation'>
                     <div className='comments__heading'>
-                        <h3 className='comments__join'>JOIN THE CONVERSATION</h3>
+                        <label htmlFor='comment' className='comments__join'>JOIN THE CONVERSATION</label>
                         <textarea className='comments__box' placeholder='Add a new comment'></textarea>
                     </div>
                     <button className='comments__submit'>
@@ -19,17 +24,18 @@ const CommentSection = () => {
                     </button>
                 </div>
             </form>
-
-            <div className='comments__data'>
-                <img className='comments__face' alt='user icon'/>
-                <div className='comments__info'>
-                    <div className='comments__top'>
-                        <p className='comments__username'>Paul Cullen</p>
-                        <p className='comments__date'>9/4/12</p>
-                    </div>
-                    <p className='comments__textarea'>fowfwuwprgngpiweron</p>
-                </div>
-            </div>
+            {commentArray.map((comment) => {
+                const stamp = new Date(comment.timestamp)
+                const actualDate = stamp.toLocaleDateString()
+                return (
+                    <Comment 
+                        key={comment.id}
+                        username={comment.name}
+                        date={actualDate}
+                        text={comment.comment}
+                    />
+                )
+            })}
         </section>
     )
 }
