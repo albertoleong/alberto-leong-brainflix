@@ -5,11 +5,11 @@ import play from "../../assets/icons/play.svg"
 import screen from "../../assets/icons/fullscreen.svg"
 import sound from '../../assets/icons/volume_up.svg'
 
-const Hero = () => {
+const Hero = ({image}) => {
 
     return (
         <div className="hero">
-            <video className="hero__video" poster='' controls>
+            <video className="hero__video" poster={image} controls>
             </video>
             {/* <img className="hero__play" src={play} alt="play" />
             <img className="hero__scrub" src={scrub} alt="scrub"></img> 
