@@ -1,0 +1,28 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.video {
+    display: flex;
+    gap: 1.25rem;
+    width: 100%;
+    padding-top: 1.25rem;
+    justify-content: start;
+
+    &__preview {
+        height: 5.75rem;
+        border-radius: 4px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        &__title {
+            @include text;
+            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        &__creator {
+            @include text;
+        }
+}

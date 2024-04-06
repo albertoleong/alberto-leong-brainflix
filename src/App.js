@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import videoData from './data/video-details.json'
 import CommentSection from './components/CommentSection/CommentSection';
+import VideoNav from './components/VideoNav/VideoNav';
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
           commentArray={commentArr}
         />
       </section>
+
+      <VideoNav />
+      
     </main>
     </>
   );
