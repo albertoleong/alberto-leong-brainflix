@@ -6,7 +6,11 @@
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     gap: 1.25rem;
-    border-bottom: 1px solid $mercury;
+    border-top: 1px solid $mercury;
+
+    @include desktop {
+        padding-right: 1.5rem;
+    }
 
     &__face {
         border-radius: 50%;

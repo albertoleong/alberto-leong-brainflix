@@ -1,19 +1,23 @@
 import { useState } from 'react';
 import './App.scss';
+import videoData from './data/video-details.json'
+import videoArray from './data/videos.json'
+
 import Description from './components/Description/Description';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
-import videoData from './data/video-details.json'
 import CommentSection from './components/CommentSection/CommentSection';
 import VideoNav from './components/VideoNav/VideoNav';
 
 function App() {
 
-    const [selectedVideo, setSelectedVideo] = useState(videoData[0])
-    const dateStamp = new Date(selectedVideo.timestamp)
-    const dateString = dateStamp.toLocaleDateString()
+  const videoList = videoArray
 
-    const commentArr = selectedVideo.comments
+  const [selectedVideo, setSelectedVideo] = useState(videoData[0])
+  const dateStamp = new Date(selectedVideo.timestamp)
+  const dateString = dateStamp.toLocaleDateString()
+
+  const commentArr = selectedVideo.comments
 
   return (
     <>
@@ -35,8 +39,10 @@ function App() {
         />
       </section>
 
-      <VideoNav />
-      
+      <VideoNav 
+        videos={videoList}
+      />
+
     </main>
     </>
   );

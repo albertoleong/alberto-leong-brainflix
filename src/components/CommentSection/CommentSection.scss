@@ -6,13 +6,21 @@
     flex-direction: column;
     padding-top: 1.25rem;
     width: 100%;
-    //margin: 1.25rem;
+    
+    @include desktop {
+        padding-top: 2.5rem;
+    }
 
     &__form {
         display: flex;
         gap: 1.25rem;
-        border-bottom: 1px solid $mercury;
         padding-bottom: 1.25rem;
+
+        @include desktop {
+            padding-right: 1.5rem;
+            align-items: flex-end;
+            width: 100%;
+        }
     }
         &__face {
             border-radius: 50%;
@@ -22,17 +30,31 @@
         }
         &__face--top {
             margin-top: 3rem;
+
+            @include desktop {
+                margin-top: 0;
+            }
         }
         &__conversation {
             display: flex;
             flex-direction: column;
             width: 100%;
             gap: 1.25rem;
+
+            @include desktop {
+                flex-direction: row;
+                align-items: end;
+                width: 100%;
+            }
         }
             &__heading {
                 display: flex;
                 flex-direction: column;
                 gap: .25rem;
+
+                @include desktop {
+                    width: 100%
+                }
             }
                 &__join {
                     @include text;
@@ -49,6 +71,11 @@
                     outline-color: $brainflix-blue;
                     
                     @include text;
+
+                    @include desktop {
+                        height: 3.25rem;
+                        width: 100%;
+                    }
                 }
                 &__box::placeholder {
                     color: $dark-black;
@@ -61,6 +88,11 @@
                     align-items: center;
                     border: none;
                     cursor: pointer;
+
+                    @include desktop {
+                        height: 3.25rem;
+                        gap: 1rem;
+                    }
                 }
                     &__icon {
                         height: 2rem;
@@ -70,5 +102,9 @@
                         color: $white;
                         font-weight: 600;
                         width: 100%;
+
+                        @include desktop {
+                            padding-right: 2rem;
+                        }
                     }
     }

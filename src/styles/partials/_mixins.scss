@@ -15,4 +15,8 @@
     font-size: 1.25rem;
     color: $brainflix-black;
     font-weight: 400;
+
+    @include desktop{
+        font-size: 1rem,;
+    }
 }
