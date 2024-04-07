@@ -94,6 +94,9 @@
                         gap: 1rem;
                     }
                 }
+                &__submit:hover {
+                    background-color: $dark-blue;
+                }
                     &__icon {
                         height: 2rem;
                     }

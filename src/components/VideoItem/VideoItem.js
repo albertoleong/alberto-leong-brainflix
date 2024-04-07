@@ -1,6 +1,6 @@
 import './VideoItem.scss'
 
-const VideoItem = ({key, id, image, title, user, switchVideo}) => {
+const VideoItem = ({id, image, title, user, switchVideo}) => {
 
     return (
         <li className='video' onClick={() => switchVideo(id)}>
