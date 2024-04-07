@@ -1,10 +1,9 @@
 import './VideoItem.scss'
-import pic from "../../assets/images/Upload-video-preview.jpg"
 
-const VideoItem = ({key,image, title, user}) => {
+const VideoItem = ({key, id, image, title, user, switchVideo}) => {
 
     return (
-        <li className='video'>
+        <li className='video' onClick={() => switchVideo(id)}>
             <img className='video__preview' src={image} alt='video preview'/>
             <div className='video__info'>
                 <h3 className='video__title'>{title}</h3>

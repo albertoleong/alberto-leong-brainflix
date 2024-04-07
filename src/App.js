@@ -11,13 +11,26 @@ import VideoNav from './components/VideoNav/VideoNav';
 
 function App() {
 
-  const videoList = videoArray
-
   const [selectedVideo, setSelectedVideo] = useState(videoData[0])
   const dateStamp = new Date(selectedVideo.timestamp)
   const dateString = dateStamp.toLocaleDateString()
 
+  const videoList = videoArray.filter((video) => {
+    return video.id !== selectedVideo.id
+  })
+
   const commentArr = selectedVideo.comments
+
+  const handleVideo = (selectedId) => {
+    const currentVideo = videoData.find((video) => {
+      if (selectedId === video.id) {
+        return true
+      } else {
+        return false
+      }
+    })
+    setSelectedVideo(currentVideo)
+  }
 
   return (
     <>
@@ -41,6 +54,7 @@ function App() {
 
       <VideoNav 
         videos={videoList}
+        switchVideo={handleVideo}
       />
 
     </main>

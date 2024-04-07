@@ -1,7 +1,7 @@
 import VideoItem from '../VideoItem/VideoItem'
 import './VideoNav.scss'
 
-const VideoNav = ({videos}) => {
+const VideoNav = ({videos, switchVideo}) => {
 
     return (
         <nav className='videoNav'>
@@ -12,9 +12,11 @@ const VideoNav = ({videos}) => {
                 return (
                     <VideoItem 
                         key={video.id}
+                        id={video.id}
                         image={video.image}
                         title={video.title}
                         user={video.channel}
+                        switchVideo={switchVideo}
                     />
                 )
              })}   
