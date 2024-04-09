@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import CommentSection from './components/CommentSection/CommentSection';
 import VideoNav from './components/VideoNav/VideoNav';
+import Upload from './components/Upload/Upload';
 
 function App() {
 
@@ -56,8 +57,8 @@ function App() {
         videos={videoList}
         switchVideo={handleVideo}
       />
-
     </main>
+    <Upload />
     </>
   );
 }
