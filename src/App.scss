@@ -7,28 +7,3 @@
     margin: 0;
     font-family: 'Avenir', Arial, Helvetica, sans-serif;
 }
-
-.main {
-    display: flex;
-    flex-direction: column;
-
-    @include desktop {
-        flex-direction: row;
-        margin-left: 9rem;
-        margin-right: 9rem;
-        margin-bottom: 4rem;
-    }
-}
-.current {
-    display: flex;
-    flex-direction: column;
-    margin: 1.25rem;
-
-    @include tablet {
-        margin: 2.25rem;
-    }
-    @include desktop {
-        width: 100%;
-        margin-right: 0;
-    }
-}

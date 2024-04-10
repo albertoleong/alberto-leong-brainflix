@@ -1,4 +1,5 @@
 import './Header.scss'
+import { Link } from 'react-router-dom'
 import logo from "../../assets/icons/BrainFlix-logo.svg"
 import face from "../../assets/images/Mohan-muruge.jpg"
 import glass from "../../assets/icons/search.svg"
@@ -12,7 +13,9 @@ const Header = () => {
 
     return (
         <header className='header'>
-            <img className='header__logo' src={logo} alt='brainflix logo'/>
+            <Link to='/' className='header__link'>
+                <img className='header__logo' src={logo} alt='brainflix logo'/>
+            </Link>
             <form className='header__form' onSubmit={handleSubmit}>
                 <div className='header__box'>
                     <div className='header__fakesearch'>
@@ -22,10 +25,12 @@ const Header = () => {
                     </div>
                     <img className='header__image' src={face} alt='user face'/>
                 </div>
-                <button className='header__button'>
-                    <img className='header__upload' src={upload} alt='upload' />
-                    <p className='header__buttontext'>UPLOAD</p>
-                </button>
+                <Link to='/upload' className='header__link'>
+                    <button className='header__button'>
+                        <img className='header__upload' src={upload} alt='upload' />
+                        <p className='header__buttontext'>UPLOAD</p>
+                    </button>
+                </Link>
                 <img className='header__image--hidden' src={face} alt='user face' />
             </form>
         </header>

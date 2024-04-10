@@ -1,0 +1,78 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    margin: 1.25rem;
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+        &__container {
+            display:flex;
+            flex-direction: column;
+        }
+            &__thumbnail {
+                display: flex;
+                flex-direction: column;
+            }
+                &__title {
+                    @include text;
+                    color: $silver;
+                    font-weight: 600;
+                }
+                &__image {
+                    height: min-content;
+                    width: 100%;
+                }
+            &__info {
+                display: flex;
+                flex-direction: column;
+            }
+                &__input{
+                    height: 1.25rem;
+                    background-color: $alabaster;
+                }
+                &__description{
+                    height: 10rem;
+                    background-color: $alabaster;
+                }
+        &__buttons {
+            display: flex;
+            flex-direction: column;
+        }
+            &__submit {
+                background-color: $brainflix-blue;
+                display: flex;
+                border: none;
+                border-radius: 5px;
+                width: 100%;
+                height: 3rem;
+            }
+                &__icon {
+                    height: 1.25rem;
+                }
+                &__text {
+                    @include text;
+                    color: $white;
+                    width: 100%;
+                    align-self: center;
+                }
+            &__cancel {
+                display: flex;
+                background-color: $white;
+                width: 100%;
+                height: 3rem;
+            }
+                &__text--blue {
+                    color: $brainflix-blue;
+                    width: 100%;
+                    align-self: center;
+                }
+}

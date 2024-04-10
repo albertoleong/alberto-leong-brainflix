@@ -76,6 +76,9 @@
                         width: 0;
                     }
                 }
+    &__link {
+        text-decoration: none;
+    }
     &__button {
         background-color: $brainflix-blue;
         color: $white;
