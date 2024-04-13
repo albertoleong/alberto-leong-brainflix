@@ -29,7 +29,7 @@ const UploadPage = () => {
                 </div>
                 <div upload__buttons>
                     <button className='upload__submit'>
-                        <img className='upload__icon' />
+                        <img className='upload__icon' alt='upload video'/>
                         <p className='upload__text'>PUBLISH</p>
                     </button>
                     <button className='upload__cancel'>
