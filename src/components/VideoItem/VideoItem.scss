@@ -9,6 +9,9 @@
     justify-content: start;
     cursor: pointer;
 
+    &__link {
+        text-decoration: none;
+    }
     &__preview {
         height: 5.75rem;
         border-radius: 4px;

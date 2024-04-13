@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.scss';
 
@@ -15,6 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/videos/:videoId' element={<Home />} />
         <Route path='/upload' element={<UploadPage />} />
       </Routes>
     </BrowserRouter>
