@@ -1,5 +1,6 @@
 import './UploadPage.scss'
 import thumbnail from '../../assets/images/Upload-video-preview.jpg'
+import uploadIcon from '../../assets/icons/upload.svg'
 
 const UploadPage = () => {
     return (
@@ -14,13 +15,14 @@ const UploadPage = () => {
                         <img className='upload__image' alt='video thumbnail' src={thumbnail}/>
                     </div>
                     <div className='upload__info'>
-                        <label className='upload__title' htmlFor='title'>
+                        <label className='upload__title upload__title--info' htmlFor='title'>
                             TITLE YOUR VIDEO
                         </label>
                         <input className='upload__input' type='text' 
                         name='video-title' placeholder='Add a title to your video'>
                         </input>
-                        <label className='upload__title' htmlFor='description'>
+
+                        <label className='upload__title upload__title--info upload__title--second' htmlFor='description'>
                             ADD A VIDEO DESCRIPTION
                         </label>
                         <textarea className='upload__description' 
@@ -29,7 +31,7 @@ const UploadPage = () => {
                 </div>
                 <div upload__buttons>
                     <button className='upload__submit'>
-                        <img className='upload__icon' alt='upload video'/>
+                        <img className='upload__icon' src={uploadIcon} alt='upload video'/>
                         <p className='upload__text'>PUBLISH</p>
                     </button>
                     <button className='upload__cancel'>
