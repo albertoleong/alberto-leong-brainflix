@@ -10,51 +10,24 @@ import VideoNav from '../../components/VideoNav/VideoNav';
 
 
 function Home() {
-
-  const { videoId } = useParams()
   
-  // const [selectedVideo, setSelectedVideo] = useState(videoData[0])
-  // const dateStamp = new Date(selectedVideo.timestamp)
-  // const dateString = dateStamp.toLocaleDateString()
-
-
-  // const videoList = videoArray.filter((video) => {
-  //   return video.id !== selectedVideo.id
-  // })
-
-  // const commentArr = selectedVideo.comments
-
-  // const handleVideo = (selectedId) => {
-  //   const currentVideo = videoData.find((video) => {
-  //     if (selectedId === video.id) {
-  //       return true
-  //     } else {
-  //       return false
-  //     }
-  //   })
-  //   setSelectedVideo(currentVideo)
-  // }
+  const { videoId } = useParams()
 
   return (
     <>
-    {/* <Hero image={selectedVideo.image}/> */}
+    <Hero 
+      videoId={videoId || "84e96018-4022-434e-80bf-000ce4cd12b8"} 
+    />
     <main className='main'>
-      {/* <section className='current'>
+      <section className='current'>
         <Description 
-          title={selectedVideo.title}
-          channel={selectedVideo.channel}
-          date={dateString}
-          viewCount={selectedVideo.views}
-          likeCount={selectedVideo.likes}
-          description={selectedVideo.description}
-          // commentCount={selectedVideo.comments.length}
+          videoId={videoId || "84e96018-4022-434e-80bf-000ce4cd12b8"} 
         />
-        <CommentSection
-          commentArray={commentArr}
-        /> 
-      </section> */}
+      </section>  
 
-      <VideoNav /> 
+      <VideoNav 
+        videoId={videoId || "84e96018-4022-434e-80bf-000ce4cd12b8"}
+      /> 
     </main>
     </>
   );

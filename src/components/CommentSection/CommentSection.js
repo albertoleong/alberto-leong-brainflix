@@ -1,9 +1,10 @@
 import './CommentSection.scss'
+
 import face from '../../assets/images/Mohan-muruge.jpg'
 import icon from '../../assets/icons/add_comment.svg'
 import Comment from '../Comment/Comment'
 
-const CommentSection = ({commentArray}) => {
+const CommentSection = ({ commentArray }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +25,7 @@ const CommentSection = ({commentArray}) => {
                     </button>
                 </div>
             </form>
-            {commentArray.map((comment) => {
+            {commentArray ?.map((comment) => {
                 const stamp = new Date(comment.timestamp)
                 const actualDate = stamp.toLocaleDateString()
                 return (
@@ -35,7 +36,7 @@ const CommentSection = ({commentArray}) => {
                         text={comment.comment}
                     />
                 )
-            })}
+            })} 
         </section>
     )
 }
