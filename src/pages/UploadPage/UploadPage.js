@@ -29,7 +29,7 @@ const UploadPage = () => {
                         placeholder='Add a description to your video'></textarea>
                     </div>
                 </div>
-                <div upload__buttons>
+                <div className='upload__buttons'>
                     <button className='upload__submit'>
                         <img className='upload__icon' src={uploadIcon} alt='upload video'/>
                         <p className='upload__text'>PUBLISH</p>
