@@ -1,11 +1,8 @@
 import './Home.scss'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 import Description from '../../components/Description/Description';
 import Hero from '../../components/Hero/Hero';
-import CommentSection from '../../components/CommentSection/CommentSection';
 import VideoNav from '../../components/VideoNav/VideoNav';
 
 
