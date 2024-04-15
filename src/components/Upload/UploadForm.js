@@ -1,11 +1,12 @@
-import './Upload.scss'
+import './UploadForm.scss'
 import thumbnail from '../../assets/images/Upload-video-preview.jpg'
+import uploadIcon from '../../assets/icons/upload.svg'
 
-const Upload = () => {
+const UploadForm = ({handleUpload}) => {
     return (
         <section className='upload'>
             <h1 className='upload__heading'>Upload Video</h1>
-            <form className='upload__form'>
+            <form className='upload__form' onSubmit={handleUpload}>
                 <div className='upload__container'>
                     <div className='upload__thumbnail'>
                         <label className='upload__title' htmlFor='video thumbnail'>
@@ -14,22 +15,23 @@ const Upload = () => {
                         <img className='upload__image' alt='video thumbnail' src={thumbnail}/>
                     </div>
                     <div className='upload__info'>
-                        <label className='upload__title' htmlFor='title'>
+                        <label className='upload__title upload__title--info' htmlFor='title'>
                             TITLE YOUR VIDEO
                         </label>
                         <input className='upload__input' type='text' 
                         name='video-title' placeholder='Add a title to your video'>
                         </input>
-                        <label className='upload__title' htmlFor='description'>
+
+                        <label className='upload__title upload__title--info upload__title--second' htmlFor='description'>
                             ADD A VIDEO DESCRIPTION
                         </label>
                         <textarea className='upload__description' 
                         placeholder='Add a description to your video'></textarea>
                     </div>
                 </div>
-                <div upload__buttons>
+                <div className='upload__buttons'>
                     <button className='upload__submit'>
-                        <img className='upload__icon' />
+                        <img className='upload__icon' src={uploadIcon} alt='upload video'/>
                         <p className='upload__text'>PUBLISH</p>
                     </button>
                     <button className='upload__cancel'>
@@ -40,4 +42,4 @@ const Upload = () => {
         </section>
     )
 } 
-export default Upload
+export default UploadForm
