@@ -1,12 +1,26 @@
 import './UploadForm.scss'
 import thumbnail from '../../assets/images/Upload-video-preview.jpg'
 import uploadIcon from '../../assets/icons/upload.svg'
+import { useState } from 'react'
 
 const UploadForm = ({handleUpload}) => {
+
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = {
+            title: title,
+            description: description
+        };
+        handleUpload(event, formData);
+    };
+
     return (
         <section className='upload'>
             <h1 className='upload__heading'>Upload Video</h1>
-            <form className='upload__form' onSubmit={handleUpload}>
+            <form className='upload__form' onSubmit={handleSubmit}>
                 <div className='upload__container'>
                     <div className='upload__thumbnail'>
                         <label className='upload__title' htmlFor='video thumbnail'>
@@ -19,6 +33,7 @@ const UploadForm = ({handleUpload}) => {
                             TITLE YOUR VIDEO
                         </label>
                         <input className='upload__input' type='text' 
+                        value={title} onChange={(e) => setTitle(e.target.value)}
                         name='video-title' placeholder='Add a title to your video'>
                         </input>
 
@@ -26,6 +41,7 @@ const UploadForm = ({handleUpload}) => {
                             ADD A VIDEO DESCRIPTION
                         </label>
                         <textarea className='upload__description' 
+                        value={description} onChange={(e) => setDescription(e.target.value)}
                         placeholder='Add a description to your video'></textarea>
                     </div>
                 </div>

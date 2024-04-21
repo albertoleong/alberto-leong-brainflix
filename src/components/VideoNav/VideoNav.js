@@ -7,13 +7,15 @@ const VideoNav = ({ videoId }) => {
 
     const [videoList, setVideoList] = useState([])
 
-    const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/videos"
+    //const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/videos"
+    const API_URL = process.env.REACT_APP_API_URL
     const apiKey = "?api_key=?1eb2b3fb-3a57-4eb9-b61b-805cb254a776"
 
     useEffect(() => {
         const getVideos = async() => {
         try {
-            const videos = await axios.get(`${apiUrl}${apiKey}`)
+            //const videos = await axios.get(`${apiUrl}${apiKey}`)
+            const videos = await axios.get(API_URL)
             setVideoList(videos.data)
         } catch (error) {
             console.log(error)

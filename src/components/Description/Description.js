@@ -9,13 +9,13 @@ import CommentSection from '../CommentSection/CommentSection'
 const Description = ({ videoId }) => {
 
     const [selectedVideo, setSelectedVideo] = useState(null)
-    const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/videos"
+    const API_URL = process.env.REACT_APP_API_URL
     const apiKey = "?api_key=?1eb2b3fb-3a57-4eb9-b61b-805cb254a776"
 
     useEffect(() => {
         const getTheVideo = async () => {
         try {
-            const theVideo = await axios.get(`${apiUrl}/${videoId}${apiKey}`)
+            const theVideo = await axios.get(API_URL + `/${videoId}`)
             setSelectedVideo(theVideo.data)
 
         } catch (error) {
@@ -34,6 +34,9 @@ const Description = ({ videoId }) => {
     const theComments = selectedVideo ? selectedVideo.comments : null
     const commentCount = theComments ? theComments.length : ''
 
+    const date = new Date(timestamp)
+    const realDate = date.toLocaleDateString()
+
     return (
         <>
         <section className='videoInfo'>
@@ -42,7 +45,7 @@ const Description = ({ videoId }) => {
                 <div className='description__details'>
                     <div className='description__details--left'>
                         <p className='description__author'>By {channel}</p>
-                        <p className='description__date'>{timestamp}</p>
+                        <p className='description__date'>{realDate}</p>
                     </div>
                     <div className='description__details--right'>
                         <div className='description__views'>
