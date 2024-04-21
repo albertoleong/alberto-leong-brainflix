@@ -18,10 +18,10 @@ const UploadForm = ({handleUpload}) => {
     };
 
     return (
-        <section className='upload'>
+        <main className='upload'>
             <h1 className='upload__heading'>Upload Video</h1>
             <form className='upload__form' onSubmit={handleSubmit}>
-                <div className='upload__container'>
+                <section className='upload__container'>
                     <div className='upload__thumbnail'>
                         <label className='upload__title' htmlFor='video thumbnail'>
                             VIDEO THUMBNAIL
@@ -44,8 +44,8 @@ const UploadForm = ({handleUpload}) => {
                         value={description} onChange={(e) => setDescription(e.target.value)}
                         placeholder='Add a description to your video'></textarea>
                     </div>
-                </div>
-                <div className='upload__buttons'>
+                </section>
+                <section className='upload__buttons'>
                     <button className='upload__submit'>
                         <img className='upload__icon' src={uploadIcon} alt='upload video'/>
                         <p className='upload__text'>PUBLISH</p>
@@ -53,9 +53,9 @@ const UploadForm = ({handleUpload}) => {
                     <button className='upload__cancel'>
                         <p className='upload__text upload__text--blue'>CANCEL</p>
                     </button>
-                </div>
+                </section>
             </form>
-        </section>
+        </main>
     )
 } 
 export default UploadForm

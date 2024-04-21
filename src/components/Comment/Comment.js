@@ -4,7 +4,7 @@ import placeholder from '../../assets/images/Placeholder-img.png'
 const Comment = ({id, username, date, text}) => {
 
     return (
-        <div className='comment'>
+        <article className='comment'>
             <img className='comment__face' src={placeholder} alt='user icon'/>
             <div className='comment__info'>
                 <div className='comment__top'>
@@ -13,7 +13,7 @@ const Comment = ({id, username, date, text}) => {
                 </div>
                 <p className='comment__textarea'>{text}</p>
             </div>
-        </div>
+        </article>
     )
 }
 export default Comment
