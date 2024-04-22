@@ -7,7 +7,6 @@ const Hero = ({ videoId }) => {
     const [selectedVideo, setSelectedVideo] = useState(null)
 
     const API_URL = process.env.REACT_APP_API_URL
-    //const apiUrl = "https://unit-3-project-api-0a5620414506.herokuapp.com/videos"
     const apiKey = "?api_key=?1eb2b3fb-3a57-4eb9-b61b-805cb254a776"
 
     useEffect(() => {
@@ -17,7 +16,7 @@ const Hero = ({ videoId }) => {
             setSelectedVideo(theVideo.data)
 
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
         }
         getTheVideo()

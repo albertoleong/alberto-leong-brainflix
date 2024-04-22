@@ -16,7 +16,7 @@ const VideoNav = ({ videoId }) => {
             const videos = await axios.get(API_URL)
             setVideoList(videos.data)
         } catch (error) {
-            console.log(error)
+            console.error(error)
             }
         }
         getVideos()

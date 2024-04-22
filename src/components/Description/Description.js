@@ -19,7 +19,7 @@ const Description = ({ videoId }) => {
             setSelectedVideo(theVideo.data)
 
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
         }
         getTheVideo()
